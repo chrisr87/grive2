@@ -2,7 +2,7 @@ project(libgrive)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-find_package(LibGcrypt REQUIRED)
+# find_package(LibGcrypt REQUIRED)
 find_package(CURL REQUIRED)
 find_package(Backtrace)
 find_package(Boost 1.40.0 COMPONENTS program_options filesystem unit_test_framework regex system REQUIRED)
@@ -11,6 +11,7 @@ find_package(CppUnit)
 find_package(Iberty)
 
 find_package(PkgConfig)
+pkg_check_modules(LIBGCRYPT REQUIRED libgcrypt) # chrisr87
 pkg_check_modules(YAJL REQUIRED yajl)
 
 add_definitions(-Wall)
